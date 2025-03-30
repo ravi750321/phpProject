@@ -1,0 +1,36 @@
+
+CREATE TABLE shops (
+    shop_id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    shop_name VARCHAR(255) NOT NULL,
+    address VARCHAR(255),
+    email VARCHAR(100) NOT NULL UNIQUE,
+    contact VARCHAR(20),
+    password VARCHAR(100) NOT NULL,
+    confirm_password VARCHAR(100) NOT NULL,
+    reg_date DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-----
+
+CREATE TABLE `shop_management`.`shops` (
+    `shop_id` INT NOT NULL AUTO_INCREMENT ,
+     `username` VARCHAR(50) NOT NULL ,
+      `shop_name` VARCHAR(255) NOT NULL ,
+       `address` VARCHAR(255) NOT NULL ,
+        `password` VARCHAR(255) NOT NULL ,
+         `confirm_password` VARCHAR(255) NOT NULL ,
+          `reg_date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+           PRIMARY KEY (`shop_id`), UNIQUE (`username`)) ENGINE = InnoDB;
+
+           CREATE TABLE `shop_management`.`employees` (
+            `emp_id` INT NOT NULL AUTO_INCREMENT ,
+             `shop_id` INT NOT NULL ,
+              `name` VARCHAR(100) NOT NULL ,
+               `position` VARCHAR(100) NOT NULL , 
+               `department` VARCHAR(100) NOT NULL ,
+                `joining_date` DATE NOT NULL ,
+                 `salary` INT NOT NULL ,
+                  `status` VARCHAR(50) NOT NULL ,
+                   `resign_date` DATE NULL ,
+                    PRIMARY KEY (`emp_id`)) ENGINE = InnoDB;

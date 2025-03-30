@@ -1,0 +1,142 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+}
+
+.sidebar {
+  background-color: #1e1e2f;
+  color: #ffffff;
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  z-index: 10;
+}
+
+.sidebar h2 {
+text-align: center;
+margin: 0 0 20px;
+padding: 15px 0;
+}
+
+.sidebar ul {
+list-style-type: none;
+padding: 0;
+}
+
+.sidebar ul li {
+position: relative;
+}
+
+.sidebar ul li a {
+color: white;
+text-decoration: none;
+display: block;
+padding: 10px;
+transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+background-color: #3e3e54;
+}
+
+.dropdown {
+display: none;
+position: absolute;
+background-color: #2e2e3a;
+left: 0;
+/* min-width: 250px; */
+z-index: 10;
+}
+
+.dropdown li a {
+padding: 10px 20px;
+}
+
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+.dropbtn {
+background-color: #4caf50;
+color: white;
+padding: 10px;
+font-size: 16px;
+border: none;
+cursor: pointer;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+z-index: 1;
+}
+
+.dropdown-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+.dropdown-content a:hover {
+background-color: #f1f1f1;
+}
+
+.show {
+display: block;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 250px; /* Equal to sidebar width */
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #e0e0e0;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+  }
+  
+  .main-content {
+      margin-left: 0;
+  }
+}
