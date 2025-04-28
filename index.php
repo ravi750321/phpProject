@@ -18,14 +18,16 @@
 
     .item {
       
-      background-color:rgb(225, 235, 229);
+      background-color:rgb(192, 240, 211);
       border: 1px solid black;
-      padding: 1.2rem;
+      padding: 1rem;
     }
 
     #navbar {
       grid-area: navbar;
-
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     #section {
@@ -44,23 +46,29 @@
 </head>
 <body>
   <div class="grid">
-    <div id="navbar" class="item">Home About Section</div>
-    <div id="section" class="item">
+
+    <div id="navbar" class="item"><span><h4>Shop Management</h4></span>
+    <span class="nav-bar">Don't Have a Account?<a class="nav-link" href="./register.php" style="display: inline;">Register</a>
+        </span>
+    </div>
+
+    <div id="section">
       <div class="login-box" style="margin:1rem 3rem;">
       <form>
-          <h2>Login</h2>
+          <h2>User Login</h2>
+
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Username</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            
+            <label for="username" class="form-label">Username</label>
+            <input type="text" id="username" class="form-control" name="username" required>
           </div>
+
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password">
           </div>
-          
-          <button type="submit" class="btn btn-primary">Submit</button>
-          <div class="links">
+         
+        <div class="links">
+          <button type="submit" class="btn btn-primary">Login</button>
           <p>If you are a new?<a href="./register.php">Register a shop</a></p>
         </div>
         </form>
