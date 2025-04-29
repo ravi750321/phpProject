@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Form</title>
+  <title>User Login</title>
   <style>
     .grid {
       display: grid;
@@ -17,10 +17,9 @@
     }
 
     .item {
-      
-      background-color:rgb(192, 240, 211);
-      border: 1px solid black;
-      padding: 1rem;
+      background-color:rgb(248, 240, 244);
+      box-shadow: 1px 1.2px 2.5px rgb(128, 125, 125);
+      padding: 0.8rem;
     }
 
     #navbar {
@@ -31,12 +30,17 @@
     }
 
     #section {
-      height: 76vh;
+      background-color:rgb(248, 252, 250);
+      border: 0.1px solid rgb(233, 229, 229);
+      height: 78vh;
       grid-area: section;
     }
 
     #footer {
+      text-align: center;
       position: fixed;
+      padding: 0.9rem;
+      border-top: 1px solid rgb(128, 125, 125);
       bottom: 0;
       width:100%;
       grid-area: footer;
@@ -69,12 +73,12 @@
          
         <div class="links">
           <button type="submit" class="btn btn-primary">Login</button>
-          <p>If you are a new?<a href="./register.php">Register a shop</a></p>
+          <p style="margin-top: 0.6rem;">If you are a new?<a href="./register.php">Register a shop</a></p>
         </div>
         </form>
       </div>
     </div>
-  <div id="footer" class="item">@copyright</div>
+  <div id="footer" class="item">@Copyright Shop Management</div>
   </div>
 </body>
 
