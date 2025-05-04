@@ -1,12 +1,13 @@
 .sidebar-nav {
-    background-color: #e5eddf;
+    background-color: #cde6ba;
     color: rgba(0, 0, 0, 0.85);
     height: 100%;
     z-index: 10;
 }
 
 .sidebar-nav h4 {
-    background-color: rgb(175, 165, 170);
+    background-color: #6d8658;
+    color:#fff;
     text-align: left;
     padding: 10px 10px;
 }
@@ -23,7 +24,7 @@
 .btn-li:hover,
 .btn-li:focus {
     color: rgba(0, 0, 0, 0.85);
-    background-color: rgb(248, 232, 87);
+    background-color: #fff;
 }
 
 .sidebar-nav ul li a {
@@ -38,7 +39,7 @@
 .sidebar-nav ul li a:focus,
 .sidebar-nav ul li a:hover {
     color: rgba(0, 0, 0, 0.85);
-    background-color: rgb(248, 232, 87);
+    background-color: #fff;
 }
 
 .btn-li {
