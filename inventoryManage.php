@@ -23,14 +23,12 @@
       </span>
 
       <div class="dropdown text-end">
-
+         
         <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
           <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
         </a>
 
         <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-          <li><a class="dropdown-item" href="#">New project...</a></li>
-          <li><a class="dropdown-item" href="#">Settings</a></li>
           <li><a class="dropdown-item" href="#">Profile</a></li>
           <li>
             <hr class="dropdown-divider">
@@ -93,7 +91,7 @@
 
       <header class="p-3 mb-3 border-bottom">
         <div class="container">
-          
+
           <h4>Inventory Manage</h4>
 
           <!-- <form>
@@ -101,10 +99,75 @@
           </form> -->
 
           <a href="./addNewItem.php" class="btn btn-warning">+Add New Item</a>
-          
+
         </div>
       </header>
 
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Shop_id</th>
+            <th>Name</th>
+            <th>SKU</th>
+            <th>Description</th>
+            <th>Stock In Hand</th>
+            <th>Unit</th>
+            <th>Rate / Unit</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td>Default</td>
+            <td>Defaultson</td>
+            <td>def@somemail.com</td>
+            <td>Default</td>
+            <td>Defaultson</td>
+            <td>def@somemail.com</td>
+            <td>Default</td>
+            <td>
+              <a href="./editItem.php?item_id=" class="btn btn-primary">Edit</a>
+
+              <a href="./inventoryItem.php?item_id=" class="btn btn-danger">Delete</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Default</td>
+            <td>Defaultson</td>
+            <td>def@somemail.com</td>
+            <td>Default</td>
+            <td>Defaultson</td>
+            <td>def@somemail.com</td>
+            <td>Default</td>
+            <td>
+              <a href="./editItem.php?item_id=" class="btn btn-primary">Edit</a>
+
+              <a href="./inventoryItem.php?item_id=" class="btn btn-danger">Delete</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Default</td>
+            <td>Defaultson</td>
+            <td>def@somemail.com</td>
+            <td>Default</td>
+            <td>Defaultson</td>
+            <td>def@somemail.com</td>
+            <td>Default</td>
+            <td>
+              <a href="./editItem.php?item_id=" class="btn btn-primary">Edit</a>
+
+              <a href="./inventoryItem.php?item_id=" class="btn btn-danger">Delete</a>
+            </td>
+          </tr>
+
+          <tr class="table-danger">
+            <td colspan="8">No Record Found</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <div id="footer" class="item">@Copyright Shop Management</div>
   </div>
