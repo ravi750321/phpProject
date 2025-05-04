@@ -35,8 +35,8 @@
 
 #section {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  /* align-items: center; */
   margin-right: 0.1rem;
   margin-top: 3.95rem;
   /* margin-left: -1.0rem; */
@@ -44,6 +44,23 @@
   border: 0.1px solid rgb(233, 229, 229);
   height: 78vh;
   grid-area: section;
+
+  header{
+    background-color: #6d8658;
+    width:100%;
+    height:4.4rem;
+  }
+  
+ header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header .container h4{
+    color:#fff;
+  }
+  
 }
 
 #footer {
