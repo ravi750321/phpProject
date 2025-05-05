@@ -1,0 +1,43 @@
+<div class="sidebar-nav">
+    <h4>Inventory</h4>
+
+    <ul>
+      <li><a href="./homepage.php">Dashboard</a></li>
+      <li class="mb-1">
+        <button
+          class="btn-li"
+          data-bs-toggle="collapse"
+          data-bs-target="#inventory-collapse"
+          aria-expanded="true">
+          Inventory
+        </button>
+        <div class="collapse show" id="inventory-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="./inventoryManage.php">Items</a></li>
+            <li><a href="#">Inventory Adjustments</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mb-1">
+        <button
+          class="btn-li"
+          data-bs-toggle="collapse"
+          data-bs-target="#sales-collapse"
+          aria-expanded="false">
+          Sales Management
+        </button>
+        <div class="collapse" id="sales-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#">Customers</a></li>
+            <li><a href="./invoices.php">Invoices</a></li>
+            <li><a href="#">Payment Recieved</a></li>
+            <li><a href="#">Sales Return</a></li>
+          </ul>
+        </div>
+      </li>
+      <li><a href="./purchase.php">Purchase</a></li>
+      <li><a href="./employee.php ">Employee Management</a></li>
+      <li><a href="#">Reports</a></li>
+    </ul>
+  </div>
