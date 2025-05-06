@@ -57,12 +57,12 @@
                     <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
                     </form> -->
 
-                <a href="./inventoryManage.php" class="btn btn-warning">Close</a>
+                <a href="./manageInventory.php" class="btn btn-warning">Close</a>
 
             </div>
 
             <div class="overflow-auto">
-                <form style="padding: 10px 20px;" id="registerForm" action="./addNewItem.php" method="post">
+                <form id="registerForm" action="./addNewItem.php" method="post">
 
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
@@ -76,7 +76,10 @@
 
                     <div class="mb-3">
                         <label for="desc" class="form-label">Description</label>
-                        <textarea id="desc" name="desc" class="form-control" required> Description about item...</textarea>
+                        <textarea
+                            name="desc"
+                            id="desc"
+                            placeholder=" Description about item..." class="form-control" required></textarea>
                     </div>
 
                     <div class="mb-3">

@@ -96,3 +96,7 @@ body {
   .table thead tr th{
     border: 3px solid #fff;
   }
+
+  form{
+    padding:0.5rem 1rem;
+  }

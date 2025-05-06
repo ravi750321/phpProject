@@ -6,10 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Purchase</title>
 
+    <!-- CSS -->
     <link rel="stylesheet" href="./css/sidenav.css">
     <link rel="stylesheet" href="./css/gridFormTableItem.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <!-- CSS -->
+
+    <!-- Script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/purchasePageScript.js"></script>
+    <!-- Script -->
 
 </head>
 
@@ -57,12 +64,12 @@
                     <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
                     </form> -->
 
-                <a href="./purchaseManage.php" class="btn btn-warning">Close</a>
+                <a href="./managePurchase.php" class="btn btn-warning">Close</a>
 
             </div>
 
             <div class="overflow-auto">
-                <form style="padding: 10px 20px;" id="registerForm" action="./addNewItem.php" method="post">
+                <form id="registerForm" action="./addNewItem.php" method="post">
 
                     <div class="mb-3">
                         <label for="vendor_name" class="form-label">Vendor Name</label>
@@ -87,7 +94,7 @@
                         <input type="date" placeholder="dd/MM/yyyy" data-integrity="date" id="purchase_date" name="purchase_date" class="form-control" required>
                     </div>
 
-                    <div class="">
+                    <div class="invoice-items">
                         <table class="table">
                             <thead>
                                 <tr>
@@ -100,7 +107,7 @@
                             </thead>
                             <tbody>
 
-                                <tr class="invoice-items">
+                                <tr class="item-row">
                                     <td>
                                         <input type="text" name="item_name[]" placeholder="Item 1" required>
                                     </td>
@@ -184,77 +191,46 @@
     </div>
 
 </body>
-
 <script>
     document.querySelector(".add-item").onclick = (event) => {
+    event.preventDefault();
+    const table = document.querySelector(".table");
+    const row = table.insertRow(table.rows.length);
+    row.className = "item-row";
+    row.innerHTML = `
+            <td>
+            <input type="text" name="item_name[]" placeholder="Item ${
+              table.rows.length - 1
+            }" required>
+            </td>
+            <td><input type="number" class="qty" name="item_quantity[]" placeholder="1" onchange="Calc(this)" required></td>
+            <td><input type="number" class="price" name="item_price[]" placeholder="0.00" onchange="Calc(this)" required></td>
+             <td>
+                <input
+                  type="number"
+                  class="amount"
+                  name="item_amount[]"
+                  placeholder="0.00"
+                  required
+                />
+              </td>
+            <td><a href="#" class="remove-item"><svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg></a></td>
+          `;
+    row.querySelector(".remove-item").onclick = (event) => {
         event.preventDefault();
-        const table = document.querySelector(".table");
-        const row = table.insertRow(table.rows.length);
-        row.className = "invoice-items";
-        row.innerHTML = `
-                <td>
-                <input type="text" name="item_name[]" placeholder="Item ${
-                  table.rows.length - 1
-                }" required>
-                </td>
-                <td><input type="number" class="qty" name="item_quantity[]" placeholder="1" onchange="Calc(this)" required></td>
-                <td><input type="number" class="price" name="item_price[]" placeholder="0.00" onchange="Calc(this)" required></td>
-                 <td>
-                    <input
-                      type="number"
-                      class="amount"
-                      name="item_amount[]"
-                      placeholder="0.00"
-                      required
-                    />
-                  </td>
-                <td><a href="#" class="remove-item"><svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg></a></td>
-              `;
-        row.querySelector(".remove-item").onclick = (event) => {
-            event.preventDefault();
-            table.deleteRow(row.rowIndex);
-            TotalAmount();
-        };
-
-    };
-    document.querySelectorAll(".remove-item").forEach((element) => {
-        element.onclick = (event) => {
-            event.preventDefault();
-
-            element.closest("tr").remove();
-            TotalAmount();
-        };
-    });
-</script>
-
-<script src="./script/jquery-3.7.1.min.js"></script>
-<script>
-    function Calc(val) {
-        let index = $(val).parent().parent().index();
-        let qty = document.querySelectorAll(".qty")[index].value;
-        let rate = document.querySelectorAll(".price")[index].value;
-
-        let amount = qty * rate;
-        document.querySelectorAll(".amount")[index].value = amount;
+        table.deleteRow(row.rowIndex);
         TotalAmount();
-    }
+    };
 
-    function TotalAmount() {
-        let subTotal = 0;
-        let totalAmount = 0;
-        let amounts = document.querySelectorAll(".amount");
-        for (let index = 0; index < amounts.length; index++) {
-            amt = document.querySelectorAll(".amount")[index].value;
-            subTotal = +(subTotal) + +(amt);
-        }
-        document.querySelector(".subtotal").value = subTotal;
-        totalAmount = +(subTotal);
-        document.querySelector(".total").value = totalAmount;
-        let adjustment = document.querySelector(".adjustment").value;
-        totalAmount = +(totalAmount) - +(adjustment);
-        document.querySelector(".total").value = totalAmount;
+};
 
-    }
+document.querySelectorAll(".remove-item").forEach((element) => {
+    element.onclick = (event) => {
+        event.preventDefault();
+
+        element.closest("tr").remove();
+        TotalAmount();
+    };
+});
 </script>
-
 </html>

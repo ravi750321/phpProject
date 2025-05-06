@@ -67,3 +67,23 @@ body {
   padding: 0.9rem 0rem;
   text-align: center;
 }
+
+form{
+  padding:0.5rem 1rem;
+}
+
+input[type="Date"]{
+  max-width: 320px;
+}
+
+input[type="text"]{
+  max-width: 768px;
+}
+
+textarea{
+  max-width: 420px;
+}
+
+select{
+  max-width: 320px;
+}

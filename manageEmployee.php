@@ -57,7 +57,7 @@
                     <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
                     </form> -->
 
-                <a href="./addNewEmployee.php" class="btn btn-warning">+Add New Employee</a>
+                <a href="./newEmployee.php" class="btn btn-warning">+New Employee</a>
 
             </div>
 
