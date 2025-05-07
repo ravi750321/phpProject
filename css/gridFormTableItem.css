@@ -68,7 +68,8 @@ body {
     text-align: center;
   }
 
-  
+/* Table CSS */
+
 .table{
     margin-top: 0.3rem;
   }
@@ -97,6 +98,23 @@ body {
     border: 3px solid #fff;
   }
 
+/* Form CSS */
   form{
     padding:0.5rem 1rem;
+  }
+
+  input[type="Date"]{
+    max-width: 320px;
+  }
+  
+  input[type="text"]{
+    max-width: 768px;
+  }
+  
+  textarea{
+    max-width: 420px;
+  }
+  
+  select{
+    max-width: 320px;
   }

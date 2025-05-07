@@ -7,7 +7,7 @@
     <title>Add New Employee</title>
 
     <link rel="stylesheet" href="./css/sidenav.css">
-    <link rel="stylesheet" href="./css/gridForm.css">
+    <link rel="stylesheet" href="./css/gridFormTableItem.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 

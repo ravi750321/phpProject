@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Purchase</title>
+    <title>New Invoice</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="./css/sidenav.css">
@@ -58,13 +58,13 @@
         <div id="section" class="item">
             <div class="header border-bottom">
 
-                <h4>New Purchase</h4>
+                <h4>New Invoice</h4>
 
                 <!-- <form>
                     <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
                     </form> -->
 
-                <a href="./managePurchase.php" class="btn btn-warning">Close</a>
+                <a href="./manageInvoices.php" class="btn btn-warning">Close</a>
 
             </div>
 
@@ -72,29 +72,34 @@
                 <form id="registerForm" action="./addNewItem.php" method="post">
 
                     <div class="mb-3">
-                        <label for="vendor_name" class="form-label">Vendor Name</label>
-                        <input type="text" id="vendor_name" name="vendor_name" class="form-control" required>
+                        <label for="cust_name" class="form-label">Customer Name</label>
+                        <input type="text" id="cust_name" name="cust_name" class="form-control" required>
                     </div>
 
                     <div class="mb-3">
-                        <label for="vendor_address" class="form-label">Vendor Address</label>
+                        <label for="cust_address" class="form-label">Customer Address</label>
                         <textarea
-                            name="vendor_address"
-                            id="vendor_address"
-                            placeholder="Enter the vendor address..." class="form-control"></textarea>
+                            name="cust_address"
+                            id="cust_address"
+                            placeholder="Enter the client's address..." class="form-control"></textarea>
                     </div>
 
                     <div class="mb-3">
-                        <label for="purchase_order" class="form-label">Purchase Order</label>
-                        <input type="text" id="purchase_order" name="purchase_order" class="form-control" required>
+                        <label for="invoice_num" class="form-label">Invoice Number</label>
+                        <input type="text" id="invoice_num" name="invoice_num" value="Inv00" class="form-control" required>
                     </div>
 
                     <div class="mb-3">
-                        <label for="purchase_date" class="form-label">Purchase Date</label>
-                        <input type="date" placeholder="dd/MM/yyyy" data-integrity="date" id="purchase_date" name="purchase_date" class="form-control" required>
+                        <label for="payment_status" class="form-label">Payment Status</label>
+                        <input type="text" id="payment_status" name="payment_status" placeholder="paid or due" class="form-control" required>
                     </div>
 
-                    <div class="purchase-items">
+                    <div class="mb-3">
+                        <label for="invoice_date" class="form-label">Invoice Date</label>
+                        <input type="date" placeholder="dd/MM/yyyy" data-integrity="date" id="invoice_date" name="invoice_date" class="form-control" required>
+                    </div>
+
+                    <div class="invoice-items">
                         <table class="table">
                             <thead>
                                 <tr>
@@ -167,7 +172,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <input type="submit" value="Create Purchase" class="btn btn-primary" />
+                        <input type="submit" value="Create Invoice" class="btn btn-primary" />
                     </div>
 
                 </form>
@@ -187,11 +192,11 @@
 </body>
 <script>
     document.querySelector(".add-item").onclick = (event) => {
-        event.preventDefault();
-        const table = document.querySelector(".table");
-        const row = table.insertRow(table.rows.length);
-        row.className = "item-row";
-        row.innerHTML = `
+    event.preventDefault();
+    const table = document.querySelector(".table");
+    const row = table.insertRow(table.rows.length);
+    row.className = "item-row";
+    row.innerHTML = `
             <td>
             <input type="text" name="item_name[]" placeholder="Item ${
               table.rows.length - 1
@@ -210,22 +215,21 @@
               </td>
             <td><a href="#" class="remove-item"><svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg></a></td>
           `;
-        row.querySelector(".remove-item").onclick = (event) => {
-            event.preventDefault();
-            table.deleteRow(row.rowIndex);
-            TotalAmount();
-        };
-
+    row.querySelector(".remove-item").onclick = (event) => {
+        event.preventDefault();
+        table.deleteRow(row.rowIndex);
+        TotalAmount();
     };
 
-    document.querySelectorAll(".remove-item").forEach((element) => {
-        element.onclick = (event) => {
-            event.preventDefault();
+};
 
-            element.closest("tr").remove();
-            TotalAmount();
-        };
-    });
+document.querySelectorAll(".remove-item").forEach((element) => {
+    element.onclick = (event) => {
+        event.preventDefault();
+
+        element.closest("tr").remove();
+        TotalAmount();
+    };
+});
 </script>
-
 </html>

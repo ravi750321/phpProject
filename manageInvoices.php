@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purchase Manage</title>
+    <title>Invoices Manage</title>
 
     <link rel="stylesheet" href="./css/sidenav.css">
     <link rel="stylesheet" href="./css/gridFormTableItem.css">
@@ -51,13 +51,13 @@
         <div id="section" class="item">
             <div class="header border-bottom">
 
-                <h4>Purchase Manage</h4>
+                <h4>Invoice Manage</h4>
 
                 <!-- <form>
                     <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
                     </form> -->
 
-                <a href="./newPurchase.php" class="btn btn-warning">+New Purchase</a>
+                <a href="./newInvoices.php" class="btn btn-warning">+New Invoice</a>
 
             </div>
 
@@ -65,13 +65,13 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Shop_id</th>
-                            <th>Date</th>
-                            <th>Purchase Number</th>
-                            <th>Vendor Name</th>
-                            <th>Amount</th>
-                            <th>Purchase Order</th>
-                            <th>Actions</th>
+                        <th>Shop_id</th>
+                        <th>Date</th>
+                        <th>Invoice Number</th>
+                        <th>Customer</th>
+                        <th>Payment Status</th>
+                        <th>Amount</th>
+                        <th>Invoice</th> 
                         </tr>
                     </thead>
                     <tbody>
@@ -86,7 +86,6 @@
                             <td>
                                 <a href="./editItem.php?item_id=" class="btn btn-primary">Edit</a>
 
-                                <a href="./inventoryItem.php?item_id=" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
 
@@ -100,7 +99,6 @@
                             <td>
                                 <a href="./editItem.php?item_id=" class="btn btn-primary">Edit</a>
 
-                                <a href="./inventoryItem.php?item_id=" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
 
@@ -114,7 +112,6 @@
                             <td>
                                 <a href="./editItem.php?item_id=" class="btn btn-primary">Edit</a>
 
-                                <a href="./inventoryItem.php?item_id=" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
 
