@@ -20,7 +20,7 @@
       padding: 0.7rem 1rem 0.5rem 1rem;
     }
 
-    form h3 {
+    .card-header {
       text-align: center;
     }
   </style>
