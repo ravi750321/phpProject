@@ -17,7 +17,7 @@
     }
 
     form {
-      padding: 0.2rem 1rem;
+      padding: 0.7rem 1rem 0.5rem 1rem;
     }
 
     form h3 {
@@ -29,9 +29,13 @@
 
 <body>
   <div class="card">
+
+    <div class="card-header">
+      <h5>Shop Registration Form</h5>
+    </div>
+
     <form id="registerForm" action="./register.php" method="post">
 
-    <h3>Shop Registration Form</h3>
     <div class="mb-3">
       <label for="username" class="form-label">Username</label>
       <input type="text" id="username" name="username" class="form-control" placeholder="Enter Username" required>
@@ -57,7 +61,7 @@
       <input type="password" id="confirmPass" name="confirmPass" class="form-control" placeholder="Repeat Password" required>
     </div>
   </form>
-   <button class="btn btn-primary" style="margin: 0rem 1rem;" type="submit" style="margin-bottom: 1rem;">Register</button>
+   <button class="btn btn-primary" style="margin: 0rem 1rem;" type="submit">Register</button>
     <p style="margin-top: 0.6rem; text-align:center;">Already have a account?<a href="./index.php"> Login</a></p>
   </div>
   
