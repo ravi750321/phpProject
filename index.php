@@ -12,7 +12,7 @@
       width: 33%;
       margin: auto;
       margin-top: 6rem;
-      box-shadow: 0.1rem 0.1rem 0.1rem #949497;
+      box-shadow: 0.1rem 0.1rem 0.5rem #949497;
     }
 
     form {
